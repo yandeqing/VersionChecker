@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.9'
+}
+
+group 'io.github.yandeqing'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile gradleApi()
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxswing:0.24.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1-1'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.2'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
